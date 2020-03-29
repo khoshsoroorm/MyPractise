@@ -1,0 +1,10 @@
+################### Sample Solution ###################
+def sume(list_1):
+    # Initialize total sum to be 0
+    sum_2 = 0
+    for number in list_1:
+        sum_1 = 0
+        for i in range(0,len(number)):
+            sum_1 = sum_1 + number[i]
+        sum_2 = sum_2+ sum_1
+    return sum_2
