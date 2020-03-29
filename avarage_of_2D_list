@@ -1,0 +1,14 @@
+################### Sample Solution ###################
+def avg(my_list):
+    # Initialize total sum to be 0
+    total_sum= 0
+    lengh_total = 0
+    avg = 0
+    for number in my_list:
+        sum_1 = 0
+        for i in range(0,len(number)):
+            sum_1 = sum_1 + number[i]
+        lengh_total = lengh_total + len(number)
+        total_sum = total_sum + sum_1
+    avg = total_sum / lengh_total
+    return avg
