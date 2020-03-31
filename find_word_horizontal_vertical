@@ -1,0 +1,18 @@
+def find_word_horizontal(crosswords, word):
+    if not crosswords or not word: 
+        return None
+    for index, row in enumerate(crosswords):
+        str = ''.join(row)
+        if str.find(word) >= 0:
+            return [index,str.find(word)]
+
+
+def find_word_vertical(crosswords,word):
+    if not crosswords or not word:
+        return None
+    for col_index in range(len(crosswords[0])):
+        str = ''
+        for row_index in range(len(crosswords)):
+            str = str + crosswords[row_index][col_index]
+        if str.find(word) >= 0:
+            return [str.find(word),col_index]
