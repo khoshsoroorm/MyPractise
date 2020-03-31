@@ -1,0 +1,21 @@
+def _single_digit_words_sample(sample):
+    output =""
+    dic_number = {
+        "1" : 'one',
+        '2' : 'two',
+        '3' : 'three',
+        '4' : 'four',
+        '5' : 'five',
+        '6' : 'six',
+        '7' : 'seven',
+        '8' : 'eight',
+        '9' : 'nine',
+        '0' : 'zero'
+        }
+    sa = str(sample)            # convert the integer input into a string
+    sa = list(sa)               # split the string into a list of characters
+    for number in sa:
+        output = output + dic_number[number] + ' '
+    # remove any trailing whitespace
+    output = output.rstrip(" ")
+    return output
