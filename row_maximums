@@ -1,0 +1,14 @@
+def row_maximums(my_multidimensional_list):
+    output = {}
+    
+    for col in range(len(my_multidimensional_list)):
+        maxi = 0
+        temp = 0
+        for row in range(len(my_multidimensional_list[col])):
+            if maxi < my_multidimensional_list[col][row]:
+                temp = maxi
+                maxi = my_multidimensional_list[col][row]
+                my_multidimensional_list[col][row] = maxi
+        dicname = 'row {} max'.format(col)
+        output[dicname] = maxi
+    return output
