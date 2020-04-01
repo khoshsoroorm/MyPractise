@@ -1,0 +1,19 @@
+def one_to_2D(sample_list, rows, cols):
+    my_2d_list = []
+    product = rows * cols
+    length = len(sample_list)
+    if length > product:
+        # ignore the extra elements by slicing
+        # and creating a new list to work with
+        sample_list = sample_list[0:product]
+    else:
+        # fill the rest of the index of the
+        # 2d list with None
+        difference = product - length
+        for i in range(length, length+difference):
+            sample_list.append(None)
+
+    for i in range(0, len(sample_list), cols):
+        my_2d_list.append(sample_list[i:i+cols])
+
+    return my_2d_list
