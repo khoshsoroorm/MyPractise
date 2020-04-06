@@ -1,0 +1,19 @@
+def calculate_expenses(filename):
+    my_dict = {}
+    mf = open(filename, 'r')
+    lines = mf.readlines()
+    mf.close()
+    for line in lines :
+        
+        line = line.strip().split(',')
+        name = line[0].strip()
+        price = float(line[1].strip())
+        if name not in my_dict:
+            my_dict[name] = price
+        else:
+            my_dict[name] += price
+    my_list = []
+    my_keys = sorted(my_dict.keys())
+    for x in my_keys:
+        my_list.append((x,"${0:.2f}".format(my_dict[x])))
+    return my_list
