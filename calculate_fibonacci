@@ -1,0 +1,4 @@
+def calculate_fibonacci(n):
+    if n< 2:
+        return n
+    return calculate_fibonacci(n-2) + calculate_fibonacci(n-1)
