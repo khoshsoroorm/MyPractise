@@ -1,0 +1,71 @@
+def find_integer_with_most_divisors(input_list):
+    nr_divisors = []
+    m = []
+    di = {}
+    for i in input_list:
+        my_list = []
+        for x in range(1, i+1):
+            if i % x == 0:
+                my_list.append(x)
+        nr_divisors.append(len(my_list))
+        di[i] = my_list
+    return di
+
+def _isprime(input_list):
+    di = find_integer_with_most_divisors(input_list)
+    my_keys = di.keys()
+    my_values = di.values()
+    my_d = {}
+    
+    for k in my_keys:
+        m = di[k]
+        li = []
+        for value in m:
+            if isPrime(value):
+                li.append(value)
+        my_d[k] = li        
+    return my_d
+def isPrime(n) : 
+  
+    # Corner cases 
+    if (n <= 1) : 
+        return False
+    if (n <= 3) : 
+        return True
+  
+    # This is checked so that we can skip  
+    # middle five numbers in below loop 
+    if (n % 2 == 0 or n % 3 == 0) : 
+        return False
+  
+    i = 5
+    while(i * i <= n) : 
+        if (n % i == 0 or n % (i + 2) == 0) : 
+            return False
+        i = i + 6
+  
+    return True
+
+def _p_sort(my_list):
+    
+    my_dictionary = _isprime(my_list)
+    my_keys = list(my_dictionary.keys())
+    my_keys = sorted(my_keys)
+    my_keys.reverse()
+    lengh = 0
+    index = 0
+    for k in my_keys:
+        if lengh < len(my_dictionary.get(k)):
+            lengh = len(my_dictionary.get(k))
+            index = k
+    print (index, lengh)
+    
+            
+            
+
+#l = [123,43,54,12,76,84,98,678,543,231]
+my_list = []
+for i  in range(1,11):
+    my_list.append(int(input()))
+    
+_p_sort(my_list)
