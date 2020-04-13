@@ -17,6 +17,10 @@ def fave(n):
         output_dict[key] = my[key]
 
     sorted_d = dict(sorted(output_dict.items(), key=operator.itemgetter(1), reverse=True))
+    ddd = {'horror': 0, 'romance': 0, 'comedy': 0, 'history': 0, 'adventure': 0, 'action': 0}
+    for item in ddd:
+        if item not in sorted_d:
+            sorted_d[item] = 0
 
     for item in sorted_d:
         print(item.title(), ':', sorted_d[item])
