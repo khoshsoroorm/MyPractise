@@ -26,6 +26,7 @@ def fave(n):
         print(item.title(), ':', sorted_d[item])
 
 
+
 n = int(input())
 
 
