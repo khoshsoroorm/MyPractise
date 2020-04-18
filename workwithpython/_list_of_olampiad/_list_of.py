@@ -2,8 +2,9 @@ def _list_of_olampiad(n):
     my_list = []
     for i in range(0, n):
         s = input()
-        s = s.lower()
         my_list.append(s.strip().split('.'))
+
+    my_list[1].lower()
     my_list = sorted(my_list)
     return my_list
 

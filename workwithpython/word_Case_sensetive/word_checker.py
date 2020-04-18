@@ -7,7 +7,8 @@ def checker(s):
         char = my_string[l].split()
         for i in range(1, len(char)):
             if char[i].istitle():
-                print(char[i], my_line.index(char[i]) + 1)
+
+                print(my_line.index(char[i]) + 1,':',char[i] )
                 h = my_line.index(char[i])
                 my_line[h] = 1
                 my_string2 += 1
