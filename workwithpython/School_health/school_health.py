@@ -1,37 +1,29 @@
-class Person:
-    count = 0
+class School:
+    def __init__(self):
+        student_age = 0
+        student_height = 0
+        student_weight = 0
+        a = input()
+        h = input()
+        w = input()
+        a = a.strip().split()
+        for i in range(len(a)):
+            student_age += int(a[i])
+        h = h.strip().split()
+        for i in range(len(h)):
+            student_height = int(h[i]) + student_height
+        w = w.strip().split()
+        for i in range(len(w)):
+            student_weight = int(w[i]) + student_weight
+        self.age = student_age
+        self.weight = student_weight
+        self.height = student_height
 
-    def __init__(self, height, weight, age):
-        self.height = height
-        self.weight = weight
-        self.age = age
-        print(self.age,self.weight,self.height)
-
-    def bmi(self):
-        print(sum(self.age)/n)
-        print(sum(self.height)/n)
-        print(sum(self.age)/n)
+    def bmi(self,n):
+        print((self.age)/n)
 
 
-def input_list():
-
-i = 1
-while i <= 2:
-    n = int(input())
-    student_age = []
-    student_height = []
-    student_weight = []
-    for i in range(0, n):
-        s = int(input())
-        student_age.append(s)
-    for i in range(0,n):
-        h = int(input())
-        student_height.append(h)
-    for i in range(0,n):
-        w = int(input())
-        student_weight.append(w)
-
-    student = Person(student_height, student_weight, student_age)
-    BMI = student.bmi()
-
-    i+=1
+n = input()
+classA = School()
+print(classA.age)
+classA.bmi(n)
