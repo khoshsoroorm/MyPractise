@@ -31,7 +31,7 @@ class FootballPlayer(Human):
     A = []
     B = []
 
-    for
+
 
 
 while Human.count <= 11:
