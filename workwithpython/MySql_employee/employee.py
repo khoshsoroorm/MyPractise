@@ -2,7 +2,7 @@ import mysql.connector
 
 my_lsit = []
 out = []
-c = mysql.connector.connect(user='root', password='Morteza2202000', database='learn_mysql', host='127.0.0.1')
+c = mysql.connector.connect(user='root', password='', database='learn_mysql', host='127.0.0.1')
 
 cursor = c.cursor()
 query = 'SELECT * FROM employee'
